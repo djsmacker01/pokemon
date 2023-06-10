@@ -1,16 +1,26 @@
-import { useState } from 'react'
-import pokemon from './pokemon.json'
-import './App.css'
+import { useState } from "react";
+import pokemon from "./pokemon.json";
+import propType from "prop-types";
+import "./App.css";
 
-const PokemonRow = ({pokemon}) => {
+const PokemonRow = ({ pokemon }) => {
   <tr>
     <td>{pokemon.name.english} </td>
     <td>{pokemon.type.join(",")}</td>
   </tr>;
+};
+
+PokemonRow.propType = {
+  pokemon: propType.shape({
+    name:  propType.shape({
+      english: propType.string,
+    }),
+    type: propType.arrayOf(propType.string)
+  })
 }
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
@@ -32,8 +42,7 @@ function App() {
           </thead>
           <tbody>
             {pokemon.slice(0, 20).map((pokemon) => (
-              <PokemonRow key={pokemon.id}/>
-               
+              <PokemonRow pokemon={pokemon} key={pokemon.id} />
             ))}
           </tbody>
         </table>
@@ -42,4 +51,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
