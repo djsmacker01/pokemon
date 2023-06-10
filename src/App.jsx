@@ -1,23 +1,24 @@
 import { useState } from "react";
 import pokemon from "./pokemon.json";
-import propType from "prop-types";
+// import propType from "prop-types";
 import "./App.css";
+import PokemonRow from "./Components/PokemonRow";
 
-const PokemonRow = ({ pokemon }) => {
-  <tr>
-    <td>{pokemon.name.english} </td>
-    <td>{pokemon.type.join(",")}</td>
-  </tr>;
-};
+// const PokemonRow = ({ pokemon }) => {
+//   <tr>
+//     <td>{pokemon.name.english} </td>
+//     <td>{pokemon.type.join(",")}</td>
+//   </tr>
+// };
 
-PokemonRow.propType = {
-  pokemon: propType.shape({
-    name:  propType.shape({
-      english: propType.string,
-    }),
-    type: propType.arrayOf(propType.string)
-  })
-}
+// PokemonRow.propType = {
+//   pokemon: propType.shape({
+//     name:  propType.shape({
+//       english: propType.string,
+//     }),
+//     type: propType.arrayOf(propType.string)
+//   })
+// }
 
 function App() {
   const [count, setCount] = useState(0);
@@ -43,6 +44,10 @@ function App() {
           <tbody>
             {pokemon.slice(0, 20).map((pokemon) => (
               <PokemonRow pokemon={pokemon} key={pokemon.id} />
+                // <tr key={pokemon.id}>
+                //   <td>{pokemon.name.english} </td>
+                //   <td>{pokemon.type.join(",")}</td>
+                // </tr> 
             ))}
           </tbody>
         </table>
