@@ -21,7 +21,7 @@ import PokemonRow from "./Components/PokemonRow";
 // }
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [filter, setFilter] = useState('');
 
   return (
     <>
@@ -33,6 +33,7 @@ function App() {
           // border: '1px solid'
         }}>
         <h1 className="title">Pokemon Search</h1>
+        <input type="text"  placeholder="Search Pokemon"/>
 
         <table width="100%">
           <thead>
