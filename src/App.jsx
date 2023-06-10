@@ -2,6 +2,13 @@ import { useState } from 'react'
 import pokemon from './pokemon.json'
 import './App.css'
 
+const PokemonRow = ({pokemon}) => {
+  <tr>
+    <td>{pokemon.name.english} </td>
+    <td>{pokemon.type.join(",")}</td>
+  </tr>;
+}
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -25,10 +32,8 @@ function App() {
           </thead>
           <tbody>
             {pokemon.slice(0, 20).map((pokemon) => (
-              <tr key={pokemon.id}>
-                <td>{pokemon.name.english} </td>
-                <td>{pokemon.type.join(',') }</td>
-              </tr>
+              <PokemonRow key={pokemon.id}/>
+               
             ))}
           </tbody>
         </table>
