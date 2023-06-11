@@ -33,7 +33,12 @@ function App() {
           // border: '1px solid'
         }}>
         <h1 className="title">Pokemon Search</h1>
-        <input type="text"  placeholder="Search Pokemon"/>
+        <input
+          type="text"
+          placeholder="Search Pokemon"
+          value={filter}
+          onChange={(e)=>setFilter(e.target.value)}
+        />
 
         <table width="100%">
           <thead>
