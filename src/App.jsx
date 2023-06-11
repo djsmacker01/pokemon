@@ -21,7 +21,7 @@ import PokemonRow from "./Components/PokemonRow";
 // }
 
 function App() {
-  const [filter, setFilter] = useState('');
+  const [filter, setFilter] = useState("");
 
   return (
     <>
@@ -33,30 +33,46 @@ function App() {
           // border: '1px solid'
         }}>
         <h1 className="title">Pokemon Search</h1>
-        <input
-          type="text"
-          placeholder="Search Pokemon"
-          value={filter}
-          onChange={(e)=>setFilter(e.target.value)}
-        />
 
-        <table width="100%">
-          <thead>
-            <tr>
-              <th>Name </th>
-              <th>Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            {pokemon.slice(0, 20).map((pokemon) => (
-              <PokemonRow pokemon={pokemon} key={pokemon.id} />
-                // <tr key={pokemon.id}>
-                //   <td>{pokemon.name.english} </td>
-                //   <td>{pokemon.type.join(",")}</td>
-                // </tr> 
-            ))}
-          </tbody>
-        </table>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "70% 30%",
+            gridColumngap: "1rem",
+          }}>
+          <div>
+            <input
+              type="text"
+              placeholder="Search Pokemon"
+              value={filter}
+              onChange={(e) => setFilter(e.target.value)}
+            />
+            <table width="100%">
+              <thead>
+                <tr>
+                  <th>Name </th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                {pokemon
+                  .filter((pokemon) =>
+                    pokemon.name.english
+                      .toLowerCase()
+                      .includes(filter.toLowerCase())
+                  )
+                  .slice(0, 20)
+                  .map((pokemon) => (
+                    <PokemonRow pokemon={pokemon} key={pokemon.id} />
+                    // <tr key={pokemon.id}>
+                    //   <td>{pokemon.name.english} </td>
+                    //   <td>{pokemon.type.join(",")}</td>
+                    // </tr>
+                  ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </>
   );
