@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function PokemonRow({pokemon}) {
+export default function PokemonRow({pokemon, onSelect}) {
   return (
     
       <tr>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import pokemon from "./pokemon.json";
-// import propType from "prop-types";
+import PropTypes from "prop-types";
 import "./App.css";
 import PokemonRow from "./Components/PokemonRow";
 
@@ -11,17 +11,20 @@ import PokemonRow from "./Components/PokemonRow";
 //   </tr>
 // };
 
-// PokemonRow.propType = {
-//   pokemon: propType.shape({
-//     name:  propType.shape({
-//       english: propType.string,
-//     }),
-//     type: propType.arrayOf(propType.string)
-//   })
-// }
+PokemonRow.PropTypes = {
+  pokemon: PropTypes.shape({
+    name: PropTypes.shape({
+      english: PropTypes.string,
+    }),
+    type: PropTypes.arrayOf(PropTypes.string)
+  }),
+  onSelect: PropTypes.func,
+};
 
 function App() {
+
   const [filter, setFilter] = useState("");
+  const [selectedItem, setSelectedItem] = useState(null);
 
   return (
     <>
@@ -72,6 +75,11 @@ function App() {
               </tbody>
             </table>
           </div>
+          {selectedItem && (
+            <div>
+              <h1>{ selectedItem.name.english}</h1>
+            </div>
+          )}
         </div>
       </div>
     </>
