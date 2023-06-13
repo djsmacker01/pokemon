@@ -66,7 +66,11 @@ function App() {
                   )
                   .slice(0, 20)
                   .map((pokemon) => (
-                    <PokemonRow pokemon={pokemon} key={pokemon.id} />
+                    <PokemonRow
+                      pokemon={pokemon}
+                      key={pokemon.id}
+                      onSelect={(pokemon)=> setSelectedItem(pokemon)}
+                    />
                     // <tr key={pokemon.id}>
                     //   <td>{pokemon.name.english} </td>
                     //   <td>{pokemon.type.join(",")}</td>
