@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export default function PokemonRow({ pokemon, onSelect }) {
   return (
@@ -11,3 +12,13 @@ export default function PokemonRow({ pokemon, onSelect }) {
     </tr>
   );
 }
+
+PokemonRow.propTypes = {
+  pokemon: PropTypes.shape({
+    name: PropTypes.shape({
+      english: PropTypes.string.isRequired,
+    }),
+    type: PropTypes.arrayOf(PropTypes.string),
+  }),
+  onSelect: PropTypes.func.isRequired,
+};

@@ -3,6 +3,7 @@ import pokemon from "./pokemon.json";
 import PropTypes from "prop-types";
 import "./App.css";
 import PokemonRow from "./Components/PokemonRow";
+import PokemonInfo from "./Components/PokemonInfo";
 
 // const PokemonRow = ({ pokemon }) => {
 //   <tr>
@@ -20,6 +21,7 @@ PokemonRow.PropTypes = {
   }),
   onSelect: PropTypes.func,
 };
+
 
 function App() {
 
@@ -79,11 +81,7 @@ function App() {
               </tbody>
             </table>
           </div>
-          {selectedItem && (
-            <div>
-              <h1>{ selectedItem.name.english}</h1>
-            </div>
-          )}
+          {selectedItem && <PokemonInfo {...selectedItem} /> }
         </div>
       </div>
     </>
