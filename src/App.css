@@ -3,11 +3,11 @@
 }
 th{
   text-align: left;
-  font-size: x-large;
+  font-size: large;
 }
 input{
-  font-size: x-large;
-  width: 100%;
+  font-size:large;
+  width: 130%;
   padding: 0.2rem;
   border-radius: 0.5;
 }

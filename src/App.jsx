@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 // import pokemon from "./pokemon.json";
-import PropTypes from "prop-types";
 import "./App.css";
 import PokemonRow from "./Components/PokemonRow";
 import PokemonInfo from "./Components/PokemonInfo";
