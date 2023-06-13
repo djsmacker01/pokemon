@@ -1,9 +1,10 @@
-import { useState } from "react";
-import pokemon from "./pokemon.json";
+import { useState, useEffect } from "react";
+// import pokemon from "./pokemon.json";
 import PropTypes from "prop-types";
 import "./App.css";
 import PokemonRow from "./Components/PokemonRow";
 import PokemonInfo from "./Components/PokemonInfo";
+// import Button from "@mui/material/Button";
 
 // const PokemonRow = ({ pokemon }) => {
 //   <tr>
@@ -27,6 +28,13 @@ function App() {
 
   const [filter, setFilter] = useState("");
   const [selectedItem, setSelectedItem] = useState(null);
+  const [pokemon, setPokemon] = useState([]);
+
+  useEffect(() => {
+    fetch("http://127.0.0.1:5173/pokemon.json")
+      .then((response) => response.json())
+      .then((data) => setPokemon(data));
+  }, []);
 
   return (
     <>

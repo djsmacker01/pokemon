@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Button from "@mui/material/Button";
 
 export default function PokemonRow({ pokemon, onSelect }) {
   return (
@@ -7,7 +8,7 @@ export default function PokemonRow({ pokemon, onSelect }) {
       <td>{pokemon.name.english} </td>
       <td>{pokemon.type.join(",")}</td>
       <td>
-        <button onClick={() => onSelect(pokemon)}>Select!</button>
+        <Button onClick={() => onSelect(pokemon)}>Select!</Button>
       </td>
     </tr>
   );
