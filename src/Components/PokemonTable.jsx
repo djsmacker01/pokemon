@@ -1,7 +1,7 @@
 import React from 'react'
 import PokemonRow from './PokemonRow';
 
-function PokemonTable({pokemon, filter,setSelectedItem}) {
+const PokemonTable = ({pokemon, filter,setSelectedItem})=> (
 
  <table width="100%">
    <thead>
@@ -28,7 +28,7 @@ function PokemonTable({pokemon, filter,setSelectedItem}) {
          // </tr>
        ))}
    </tbody>
- </table>;
-}
+ </table>
+)
 
 export default PokemonTable

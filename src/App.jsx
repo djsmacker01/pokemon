@@ -8,6 +8,7 @@ import PokemonRow from "./Components/PokemonRow";
 import PokemonInfo from "./Components/PokemonInfo";
 import PokemonType from "./PokemonType";
 import styled from "@emotion/styled";
+import PokemonTable from "./Components/PokemonTable";
 
 // import Button from "@mui/material/Button";
 
@@ -53,7 +54,12 @@ function App() {
               filter={filter}
               setFilter={setFilter}
             />
-            <table width="100%">
+            <PokemonTable
+              filter={filter}
+              pokemon={pokemon}
+             setSelectedItem={setSelectedItem} 
+            />
+            {/* <table width="100%">
               <thead>
                 <tr>
                   <th>Name </th>
@@ -80,7 +86,7 @@ function App() {
                     // </tr>
                   ))}
               </tbody>
-            </table>
+            </table> */}
           </div>
           {selectedItem && <PokemonInfo {...selectedItem} />}
         </ColumnsLayout>
