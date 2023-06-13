@@ -6,10 +6,13 @@ import "./App.css";
 import PokemonRow from "./Components/PokemonRow";
 import PokemonInfo from "./Components/PokemonInfo";
 import PokemonType from "./PokemonType";
+import styled from '@emotion/styled'
 // import Button from "@mui/material/Button";
 
 
-
+const Titled = styled.h1`
+  text-align: center;
+`;
 
 
 function App() {
@@ -33,7 +36,7 @@ function App() {
           paddingTop: "1rem",
           // border: '1px solid'
         }}>
-        <h1 className="title">Pokemon Search</h1>
+        <Titled>Pokemon Search</Titled>
 
         <div
           style={{
