@@ -8,7 +8,9 @@ export default function PokemonRow({ pokemon, onSelect }) {
       <td>{pokemon.name.english} </td>
       <td>{pokemon.type.join(",")}</td>
       <td>
-        <Button onClick={() => onSelect(pokemon)}>Select!</Button>
+        <Button variant="contained" onClick={() => onSelect(pokemon)}>
+          More Info!
+        </Button>
       </td>
     </tr>
   );
