@@ -3,10 +3,12 @@ import { useState, useEffect } from "react";
 // import PropTypes from "prop-types";
 
 import "./App.css";
+import PokemonFilter from "./Components/PokemonFilter";
 import PokemonRow from "./Components/PokemonRow";
 import PokemonInfo from "./Components/PokemonInfo";
 import PokemonType from "./PokemonType";
 import styled from "@emotion/styled";
+
 // import Button from "@mui/material/Button";
 
 const Titled = styled.h1`
@@ -21,18 +23,12 @@ const ColumnsLayout = styled.div`
 `;
 
 const Container = styled.div`
-    margin: auto;
-    width: 800px;
-    padding-top: 1rem;
-
+  margin: auto;
+  width: 800px;
+  padding-top: 1rem;
 `;
 
-const Input = styled.input`
-  font-size: large;
-  width: 130%;
-  padding: 0.2rem;
-  border-radius: 0.5;
-`;
+
 
 function App() {
   const [filter, setFilter] = useState("");
@@ -52,11 +48,10 @@ function App() {
 
         <ColumnsLayout>
           <div>
-            <Input
-              type="text"
+            <PokemonFilter
               placeholder="Search Pokemon"
-              value={filter}
-              onChange={(e) => setFilter(e.target.value)}
+              filter={filter}
+              setFilter={setFilter}
             />
             <table width="100%">
               <thead>
