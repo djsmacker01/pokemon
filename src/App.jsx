@@ -1,26 +1,15 @@
 import { useState, useEffect } from "react";
 // import pokemon from "./pokemon.json";
+// import PropTypes from "prop-types";
+
 import "./App.css";
 import PokemonRow from "./Components/PokemonRow";
 import PokemonInfo from "./Components/PokemonInfo";
+import PokemonType from "./PokemonType";
 // import Button from "@mui/material/Button";
 
-// const PokemonRow = ({ pokemon }) => {
-//   <tr>
-//     <td>{pokemon.name.english} </td>
-//     <td>{pokemon.type.join(",")}</td>
-//   </tr>
-// };
 
-PokemonRow.PropTypes = {
-  pokemon: PropTypes.shape({
-    name: PropTypes.shape({
-      english: PropTypes.string,
-    }),
-    type: PropTypes.arrayOf(PropTypes.string)
-  }),
-  onSelect: PropTypes.func,
-};
+
 
 
 function App() {

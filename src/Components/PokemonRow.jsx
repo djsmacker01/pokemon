@@ -1,6 +1,6 @@
 import React from "react";
-import Button from "@mui/material/Button";
-
+import {Button} from "@mui/material/Button";
+import PokemonType from "../PokemonType";
 export default function PokemonRow({ pokemon, onSelect }) {
   return (
     <tr>
@@ -14,5 +14,9 @@ export default function PokemonRow({ pokemon, onSelect }) {
     </tr>
   );
 }
+
+PokemonRow.prototype = {
+  pokemon: PropTypes.arrayOf(PokemonType),  
+};
 
 
