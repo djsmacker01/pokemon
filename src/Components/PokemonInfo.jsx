@@ -1,4 +1,5 @@
 import React from 'react'
+import PokemonType from '../PokemonType';
 
 
 export default function PokemonInfo({ name, base }) {
@@ -20,4 +21,5 @@ export default function PokemonInfo({ name, base }) {
   );
 }
 
+PokemonInfo.prototype = PokemonType
 
